@@ -2,3 +2,11 @@
 <div>{{#link-to 'games.new'}}Add a new game{{/link-to}}</div>
 
 {{outlet}}
+
+<div class="all-games">
+  <ul>
+    {{#each game in model}}
+      <li>{{game.title}} - {{game.platform}}</li>
+    {{/each}}
+  </ul>
+</div>
