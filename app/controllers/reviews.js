@@ -27,7 +27,7 @@ export default Ember.Controller.extend({
         cons: ''
       });
 
-      this.transitionToRoute('game', game.id)
+      this.transitionToRoute('game', game.id);
     }
   }
 });

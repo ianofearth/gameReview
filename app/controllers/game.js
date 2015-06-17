@@ -9,10 +9,10 @@ export default Ember.Controller.extend({
       this.transitionTo('games');
     },
     editGame: function() {
-      this.set('isEditing', true)
+      this.set('isEditing', true);
     },
     updateGame: function() {
-      this.set('isEditing', false)
+      this.set('isEditing', false);
       this.get('model').save();
     }
   }
