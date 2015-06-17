@@ -1,0 +1,24 @@
+<br>
+<form>
+  <div>
+    <label>Enter Game Title: </label>
+    {{input id='title' name='title' placeholder='title' class='title-input' value=title type='text'}}
+  </div>
+  <div>
+    <label>Select ESRB Rating: </label>
+    {{view 'select' content=esrbs value=esrb}}
+  </div>
+  <div>
+    <label>Enter Genre: </label>
+    {{input id='genre' name='genre' placeholder='genre' class='genre-input' value=genre type='text'}}
+  </div>
+  <div>
+    <label>Enter Platform: </label>
+    {{input id='platform' name='platform' placeholder='platform' class='platform-input' value=platform type='text'}}
+  </div>
+  <div>
+    <label>Enter Game Description: </label>
+    {{textarea id='description' name='description' placeholder='description' class='description-input' value=description type='text' rows='15'}}
+  </div>
+  <button {{action 'addGame'}}>Add This Game</button>
+</form>
