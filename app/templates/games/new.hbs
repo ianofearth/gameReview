@@ -1,24 +1,25 @@
 <br>
 <form>
-  <div>
+  <div class='form-group'>
     <label>Enter Game Title: </label>
-    {{input id='title' name='title' placeholder='title' class='title-input' value=title type='text'}}
-  </div>
-  <div>
+    {{input id='title' name='title' placeholder='title' class='form-control title-input' value=title type='text'}}
+
     <label>Select ESRB Rating: </label>
-    {{view 'select' content=esrbs value=esrb}}
-  </div>
-  <div>
+    <div class="select">
+      {{view 'select' content=esrbs value=esrb class='form-control'}}
+    </div>
+
     <label>Enter Genre: </label>
-    {{input id='genre' name='genre' placeholder='genre' class='genre-input' value=genre type='text'}}
-  </div>
-  <div>
-    <label>Enter Platform: </label>
-    {{input id='platform' name='platform' placeholder='platform' class='platform-input' value=platform type='text'}}
-  </div>
-  <div>
+    {{input id='genre' name='genre' placeholder='genre' class='form-control genre-input' value=genre type='text'}}
+
+    <label>Enter Platform (command click for multiple): </label>
+    <div class="select">
+      {{view 'select' multiple='true' content=platforms value=platform class='form-control'}}
+      <!-- {{input id='platform' name='platform' placeholder='platform' class='form-control platform-input' value=platform type='text'}} -->
+    </div>
+
     <label>Enter Game Description: </label>
-    {{textarea id='description' name='description' placeholder='description' class='description-input' value=description type='text' rows='15'}}
+    {{textarea id='description' name='description' placeholder='description' class='form-control description-input' value=description type='text' rows='5'}}
   </div>
-  <button {{action 'addGame'}}>Add This Game</button>
+  <button {{action 'addGame'}} class='btn btn-primary'>Add This Game</button>
 </form>

@@ -1,9 +1,19 @@
-<h1>List of Games</h1>
-<div>{{#link-to 'games.new'}}Add a new game{{/link-to}}</div>
+<h1>Welcome to Game Reviewer</h1>
+<h4>Add a game below or click on a game to post your review.</h4>
 
-{{outlet}}
+<br>
 
-<div class="all-games">
+<div><h3>{{#link-to 'games.new'}}Add a new game{{/link-to}}</h3></div>
+
+<br>
+
+
+<div class='container'>
+  {{outlet}}
+</div>
+
+<div class="container all-games">
+  <h3>List of Games to Review:</h3>
   <ul>
     {{#each game in model}}
       <li>{{#link-to 'game' game.id}}{{game.title}}{{/link-to}} - {{game.platform}}</li>
