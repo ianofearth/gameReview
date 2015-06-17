@@ -5,5 +5,6 @@ export default DS.Model.extend({
   esrb: DS.attr('string'),
   genre: DS.attr('string'),
   description: DS.attr('string'),
-  platform: DS.attr('string')
+  platform: DS.attr('string'),
+  reviews: DS.hasMany('review', {async: true})
 });

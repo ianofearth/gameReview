@@ -3,7 +3,9 @@
 <h3>Genre: {{model.genre}}</h3>
 <h3>Platform: {{model.platform}}</h3>
 <h5>Description: {{model.description}}</h5>
-
+{{#each review in model.reviews}}
+  <p>{{review.reviewer}}: {{review.rating}}</p>
+{{/each}}
 <button {{action 'deleteGame'}}>Delete Game</button>
 
 {{#if isEditing}}
@@ -35,3 +37,5 @@
 <button {{action 'editGame'}}>Update This Game</button>
 
 {{/if}}
+{{#link-to 'reviews'}}Add a review{{/link-to}}
+{{outlet}}

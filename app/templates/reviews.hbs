@@ -1,0 +1,24 @@
+<h1>Add a review</h1>
+<form>
+  <div>
+  <label for="reviewer">Reviewer Name:</label>
+    {{input type='text' id='reviewer' name='reviewer' class='input-reviewer' value=reviewer}}
+  </div>
+  <div>
+  <label for="rating">Rating:</label>
+    {{input type='number' id='rating' name='rating' class='input-rating' value=rating min='0' max='10'}}
+  </div>
+  <div>
+  <label for="pros">Pros</label>
+    {{input type='text' id='pros' name='pros' class='input-pros' value=pros}}
+  </div>
+  <div>
+  <label for="cons">Cons</label>
+    {{input type='text' id='cons' name='cons' class='input-cons' value=cons}}
+  </div>
+  <div>
+  <label for="details">Details</label>
+    {{textarea type='text' id='details' name='details' class='input-details' value=details}}
+  </div>
+  <button {{action 'addReview'}}>Add review</button>
+</form>
