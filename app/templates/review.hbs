@@ -4,3 +4,39 @@
 <p>The upsides: {{model.pros}}</p>
 <p>The downsides: {{model.cons}}</p>
 <h4>{{model.details}}</h4>
+
+
+{{#if isEditing}}
+  <form>
+    <div>
+    <label for="title">Give your Review a Title:</label>
+      {{input type='text' id='title' name='title' class='input-title' value=model.title}}
+    </div>
+    <div>
+    <label for="reviewer">Reviewer Name:</label>
+      {{input type='text' id='reviewer' name='reviewer' class='input-reviewer' value=model.reviewer}}
+    </div>
+    <div>
+    <label for="rating">Rating:</label>
+      {{input type='number' id='rating' name='rating' class='input-rating' value=model.rating min='0' max='10'}}
+    </div>
+    <div>
+    <label for="pros">Pros</label>
+      {{input type='text' id='pros' name='pros' class='input-pros' value=model.pros}}
+    </div>
+    <div>
+    <label for="cons">Cons</label>
+      {{input type='text' id='cons' name='cons' class='input-cons' value=model.cons}}
+    </div>
+    <div>
+    <label for="details">Details</label>
+      {{textarea type='text' id='details' name='details' class='input-details' value=model.details}}
+    </div>
+    <button {{action 'updateReview'}}>Update This Review</button>
+  </form>
+{{else}}
+  <button {{action 'editReview'}}>Update This Review</button>
+
+{{/if}}
+
+<button {{action 'deleteReview'}}>Delete This Review</button>
