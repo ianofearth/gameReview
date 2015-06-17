@@ -1,0 +1,37 @@
+<h1>{{model.title}}</h1>
+<h3>ESRB Rating: {{model.esrb}}</h3>
+<h3>Genre: {{model.genre}}</h3>
+<h3>Platform: {{model.platform}}</h3>
+<h5>Description: {{model.description}}</h5>
+
+<button {{action 'deleteGame'}}>Delete Game</button>
+
+{{#if isEditing}}
+<form>
+  <div>
+    <label>Enter Game Title: </label>
+    {{input id='title' name='title' placeholder='title' class='title-input' value=model.title type='text'}}
+  </div>
+  <div>
+    <label>Select ESRB Rating: </label>
+    {{view 'select' content=esrbs value=model.esrb}}
+  </div>
+  <div>
+    <label>Enter Genre: </label>
+    {{input id='genre' name='genre' placeholder='genre' class='genre-input' value=model.genre type='text'}}
+  </div>
+  <div>
+    <label>Enter Platform: </label>
+    {{input id='platform' name='platform' placeholder='platform' class='platform-input' value=model.platform type='text'}}
+  </div>
+  <div>
+    <label>Enter Game Description: </label>
+    {{textarea id='description' name='description' placeholder='description' class='description-input' value=model.description type='text' rows='15'}}
+  </div>
+  <button {{action 'updateGame'}}>Save Updates</button>
+</form>
+
+{{else}}
+<button {{action 'editGame'}}>Update This Game</button>
+
+{{/if}}

@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   esrbs: ['E', 'T', 'M'],
-  platforms: ['PC', 'XBOX One', 'PS4', 'Wii U'],
+  // platforms: ['PC', 'XBOX One', 'PS4', 'Wii U'],
   actions: {
     addGame: function() {
       var newGame = this.store.createRecord('game', {

@@ -6,7 +6,7 @@
 <div class="all-games">
   <ul>
     {{#each game in model}}
-      <li>{{game.title}} - {{game.platform}}</li>
+      <li>{{#link-to 'game' game.id}}{{game.title}}{{/link-to}} - {{game.platform}}</li>
     {{/each}}
   </ul>
 </div>
