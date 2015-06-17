@@ -12,6 +12,7 @@ Router.map(function() {
   this.resource('game', {path: 'games/:game_id'}, function(){
     this.resource('reviews');
   });
+  this.resource('review', {path: 'reviews/:review_id'});
 });
 
 export default Router;

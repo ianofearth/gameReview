@@ -3,8 +3,9 @@
 <h3>Genre: {{model.genre}}</h3>
 <h3>Platform: {{model.platform}}</h3>
 <h5>Description: {{model.description}}</h5>
+
 {{#each review in model.reviews}}
-  <p>{{review.reviewer}}: {{review.rating}}</p>
+  <p>{{#link-to 'review' review.id}}{{review.title}} {{review.rating}}/10 by:{{review.reviewer}}{{/link-to}}</p>
 {{/each}}
 <button {{action 'deleteGame'}}>Delete Game</button>
 

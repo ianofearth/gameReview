@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
   actions: {
     addReview: function() {
       var newReview = this.store.createRecord('review', {
+        title: this.get('title'),
         reviewer: this.get('reviewer'),
         rating: this.get('rating'),
         pros: this.get('pros'),
@@ -18,12 +19,13 @@ export default Ember.Controller.extend({
       game.save();
 
       this.setProperties({
+        title:'',
         rating: '',
         reviewer: '',
         pros: '',
         details: '',
         cons: ''
-      })
+      });
 
       this.transitionToRoute('game', game.id)
     }
