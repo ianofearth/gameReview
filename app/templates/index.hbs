@@ -11,9 +11,11 @@
 </ul>
 
 <button {{action 'openSearchByESRB'}}>Open Search by ESRB</button>
+<button {{action 'openSearchByRating'}}>Open Search by Rating</button>
 
 
-
+<br>
+<br>
 
 
 {{#if openSearchByESRB}}
@@ -24,6 +26,12 @@
 </form>
 
 {{else}}
+  {{#if openSearchByRating}}
+    <label>Enter Review Rating to search by: </label>
+    {{input type='number' value=rating}}
+    <button {{action 'searchByRating'}}>Search by Rating</button>
+
+  {{/if}}
 
 {{/if}}
 {{outlet}}

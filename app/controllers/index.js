@@ -19,5 +19,20 @@ export default Ember.Controller.extend({
       });
       this.setProperties('matchedGames', matchGamesCopy)
     }
+    //**this process is in development, could not finish by the end of day**
+    // openSearchByRating: function() {
+    //   this.set('openSearchByRating', true);
+    // },
+    // searchByRating: function() {
+    //   this.set('openSearchByRating', false);
+    //   var matchThis = this.get('rating');
+    //   var matchGamesCopy = this.matchedGames;
+    //   this.model.forEach(function(game) {
+    //     if(game.get('rating') === matchThis) {
+    //       matchGamesCopy.pushObject(game);
+    //     }
+    //   });
+    //   this.setProperties('matchedGames', matchGamesCopy)
+    // }
   }
 });
