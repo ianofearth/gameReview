@@ -6,6 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource('index', {path: '/'}, function(){
+    this.resource('search');
+  });
   this.resource('games', function() {
     this.route('new');
   });

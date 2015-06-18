@@ -1,0 +1,29 @@
+<h1>Welcome to Game Reviewer</h1>
+
+<h4>Click the "Games" tab in the nav bar to view or add games and review them OR select search parameters below to finter games.</h4>
+
+
+
+<ul>
+  {{#each game in matchedGames}}
+  <li>{{#link-to 'game' game.id}}{{game.title}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+<button {{action 'openSearchByESRB'}}>Open Search by ESRB</button>
+
+
+
+
+
+{{#if openSearchByESRB}}
+<form>
+  <label>Select ESRB to search by: </label>
+  {{view 'select' content=esrbs value=esrb}}
+  <button {{action 'searchByESRB'}}>Search by ESRB</button>
+</form>
+
+{{else}}
+
+{{/if}}
+{{outlet}}
