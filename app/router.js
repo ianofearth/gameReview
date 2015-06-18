@@ -13,6 +13,8 @@ Router.map(function() {
     this.resource('reviews');
   });
   this.resource('review', {path: 'reviews/:review_id'});
+  this.resource('giantbomb', {path: 'giantbomb/:gbgame'});
+  this.resource('gbgame', {path: 'giantbomb/:gbgame_id'});
 });
 
 export default Router;

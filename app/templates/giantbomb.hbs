@@ -1,0 +1,5 @@
+<h1>GiantBomb results</h1>
+
+{{#each game in model}}
+  {{#link-to 'gbgame' game.aliases}}<p>{{game.name}}</p>{{/link-to}}
+{{/each}}

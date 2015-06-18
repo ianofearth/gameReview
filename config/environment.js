@@ -4,7 +4,15 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'game-review',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
+    contentSecurityPolicy: {
+      'connect-src': "'self' wss://*.firebaseio.com http://www.giantbomb.com/api/search/",
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
+      'font-src': "'self' http://www.giantbomb.com/api/search/",
+      'img-src': "'self' http://www.giantbomb.com/api/search/",
+      'style-src': "'self' 'unsafe-inline' http://www.giantbomb.com/api/search/",
+      'frame-src': "'none' http://www.giantbomb.com/api/search/"
+      },
     firebase: 'https://gamereview.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',

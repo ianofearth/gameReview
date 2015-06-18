@@ -20,3 +20,12 @@
     {{/each}}
   </ul>
 </div>
+
+<form>
+  <div class="form-group">
+    <label for="name">Search Giant Bomb</label>
+    {{input value=gbgame id="gbgame"}}
+  </div>
+
+  <button class="btn btn-primary" {{action 'searchGiantBomb'}}>search giant bomb</button>
+</form>
